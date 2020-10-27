@@ -1,0 +1,51 @@
+*{
+    font-family: Noto Sans TC, Roboto, sans-serif;
+}
+.wrap{
+    width: 1440px;
+    margin:0 auto;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bolder;
+    color: orange;
+    margin:20pt 0pt;
+    
+}
+.title img{
+    vertical-align: middle;
+}
+
+.subtitle{
+    font-size:24px;
+    font-weight: bold;
+    margin:20pt 0pt;
+    padding-left:10pt;
+    border-left: 5px solid orange;
+}
+
+.content{
+    font-size:18px;
+    line-height: 40px;
+}
+.content2{
+    font-size:18px;
+    line-height: 40px;
+    background-color: rgb(255, 244, 224);
+}
+
+.content td,.content2 td{
+    padding:0 10px;
+    text-align: center;
+    border-right: 2px dashed white;
+}
+
+.content th{
+    background-color: orange;
+    padding: 10px 30px;
+}
+
+.select{
+    padding: 3px;   
+}

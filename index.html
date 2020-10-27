@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>臺中市iBike即時車位查詢</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1 class="title">臺中市 <img src="https://i.youbike.com.tw/photos/logo/i/logo.png" alt="iBike logo"> 即時車位查詢</h1>
+        <div class="container">
+            <h2 class="subtitle">搜尋條件</h2>
+            <p class="content">地區：
+            <select id="areaList" class="content select" onchange="renew(this.selectedIndex)"></select></p>
+            <h2 class="subtitle">搜尋結果</h2>
+            <p id="updateTime">更新時間：</p>
+            <table>
+                <thead>
+                    <tr class="content">
+                        <th>站點名稱</th>
+                        <th>可借車輛</th>
+                        <th>可停空位</th>
+                    </tr>
+                </thead>
+                <tbody id="spotdetail">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./js/loadJSON.js"></script>
+
+
+    
+    <script>
+        const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+        let lastChecked;
+
+        function handleCheck(e) {
+            let inBetween = false;
+            if (e.shiftKey && this.checked) {
+                checkboxes.forEach(checkbox => {
+                    if (checkbox === this || checkbox === lastChecked) {
+                        inBetween = !inBetween;
+                    }
+                    if (inBetween) {
+                        checkbox.checked = true;
+                    }
+                })
+            }
+            lastChecked = this;
+        }
+
+        checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+    </script>
+</body>
+
+</html>
